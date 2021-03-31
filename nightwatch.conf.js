@@ -1,18 +1,37 @@
+// module.exports = {
+//   "src_folders" : ["tests"],
+//   "page_objects_path" : ["page-objects"],
+
+//   "webdriver" : {
+//     "start_process": true,
+//     "server_path": "node_modules/.bin/chromedriver",
+//     "port": 9515
+//   },
+
+//   "test_settings" : {
+//     "default" : {
+//       "desiredCapabilities": {
+//         "browserName": "chrome"
+//       }
+//     }
+//   }
+// }
+
+const chrome = require('chromedriver')
+
 module.exports = {
-  "src_folders" : ["tests"],
-  "page_objects_path" : ["page-objects"],
-
-  "webdriver" : {
-    "start_process": true,
-    "server_path": "node_modules/.bin/chromedriver",
-    "port": 9515
+  src_folders: ['tests'],
+  page_objects_path : ["page-objects"],
+  webdriver: {
+    start_process: true,
+    server_path: chrome.path,
+    port: 9515,
   },
-
-  "test_settings" : {
-    "default" : {
-      "desiredCapabilities": {
-        "browserName": "chrome"
-      }
-    }
-  }
+  test_settings: {
+    default: {
+      desiredCapabilities: {
+        browserName: 'chrome',
+      },
+    },
+  },
 }
