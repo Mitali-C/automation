@@ -4,14 +4,14 @@ exports.onboardingFlow = (browser) => {
     .navigate()
     .useXpath()
     // check if newsletter modal is visible
-    .waitForElementVisible('@newsletter_modal', 10000)
-    // add an email to signup for the newsletter
-    .setValue('@newsletter_input', 'test@email.com')
-    .click('@newsletter_submit')
-    // once submitted, wait for success message for newsletter signup
-    .waitForElementVisible('@newsletter_signup_success_msg', 10000)
-    // close the newsletter modal
-    .click('@close_newsletter_btn')
+    // .waitForElementVisible('@newsletter_modal', 10000)
+    // // add an email to signup for the newsletter
+    // .setValue('@newsletter_input', 'test@email.com')
+    // .click('@newsletter_submit')
+    // // once submitted, wait for success message for newsletter signup
+    // .waitForElementVisible('@newsletter_signup_success_msg', 10000)
+    // // close the newsletter modal
+    // .click('@close_newsletter_btn')
     // go to the shorter flow
     .click("//*[contains(text(),'I have an idea')]")
     // check if second question comes up on the screen and verify its the corect question
@@ -54,7 +54,7 @@ exports.onboardingFlow = (browser) => {
     .click('@continue_btn')
     .waitForElementVisible('@canvas_submit_btn', 10000)
     .click('@canvas_submit_btn')
-    .waitForElementVisible('@waitlist_modal', 10000)
+    .waitForElementVisible('@waitlist_modal', 60000)
     // .pause(10000)
     .end();
 }
