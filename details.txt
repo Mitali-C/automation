@@ -1,0 +1,1 @@
+command to run tests and eventually generate report: npx nightwatch tests --reporter html-reporter.js
