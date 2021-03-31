@@ -1,0 +1,17 @@
+name: xbrowser
+
+on: [push]
+
+jobs:
+  
+  e2e-chrome:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npx nightwatch tests --reporter html-reporter.js
+        env:
+          BROWSER: chrome
